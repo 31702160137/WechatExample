@@ -18,9 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.main_activity);
-
         initView();
         initFragmentView();
     }
@@ -39,17 +37,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     //初始化页面
     private void initView(){
-        tv_menu_chat = findViewById(R.id.tv_nav_chat);
-        tv_menu_my = findViewById(R.id.tv_nav_my);
-        tv_menu_users = findViewById(R.id.tv_nav_users);
-        tv_menu_chat.setOnClickListener(this);
-        tv_menu_my.setOnClickListener(this);
-        tv_menu_users.setOnClickListener(this);
+        tv_menu_chat    = findViewById(R.id.tv_nav_chat);
+        tv_menu_my      = findViewById(R.id.tv_nav_my);
+        tv_menu_users   = findViewById(R.id.tv_nav_users);
+        tv_menu_chat    .setOnClickListener(this);
+        tv_menu_my      .setOnClickListener(this);
+        tv_menu_users   .setOnClickListener(this);
     }
+    //清除底部菜单选中状态
     private void selected(){
-        tv_menu_users.setSelected(false);
-        tv_menu_chat.setSelected(false);
-        tv_menu_my.setSelected(false);
+        tv_menu_users   .setSelected(false);
+        tv_menu_chat    .setSelected(false);
+        tv_menu_my      .setSelected(false);
     }
     @Override
     public void onClick(View v) {

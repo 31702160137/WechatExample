@@ -11,8 +11,9 @@
         android:gravity="center"
         android:background="@color/color_title"/>
     <ExpandableListView
+        android:id="@+id/exlist_user"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
     </ExpandableListView>
 </LinearLayout>
