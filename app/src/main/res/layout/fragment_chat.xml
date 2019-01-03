@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="聊天室"
+        android:textSize="14dp"
+        android:gravity="center"
+        android:background="@color/color_title"/>
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="sadasd"/>

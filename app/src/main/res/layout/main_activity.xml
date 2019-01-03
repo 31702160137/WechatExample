@@ -13,7 +13,7 @@
         style="@style/nav_bottom"
         android:id="@+id/ly_bottom"
         android:orientation="horizontal"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:background="#ffffff"
         >
@@ -27,7 +27,7 @@
             android:padding="5dp"
             android:text="聊天室"
             android:textColor="@drawable/color_menu_text"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
         <TextView
             android:id="@+id/tv_nav_users"
             android:layout_width="0dp"
@@ -38,7 +38,7 @@
             android:padding="5dp"
             android:text="联系人"
             android:textColor="@drawable/color_menu_text"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tv_nav_my"
@@ -50,14 +50,14 @@
             android:padding="5dp"
             android:text="我的"
             android:textColor="@drawable/color_menu_text"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
     <View
         android:layout_above="@id/ly_bottom"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#7e7a7a">
+        android:background="#d4cece">
     </View>
     <RelativeLayout
 

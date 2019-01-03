@@ -1,22 +1,26 @@
 package com.example.a104168.wechatexample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.a104168.wechatexample.fragmentlayout.*;
+import com.example.a104168.wechatexample.fragmentlayout.fragment_chat;
+import com.example.a104168.wechatexample.fragmentlayout.fragment_my;
+import com.example.a104168.wechatexample.fragmentlayout.fragment_users;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_menu_users,tv_menu_chat,tv_menu_my;        //底部导航监听控件
 
-    protected fragment_users fragmentUsers = new fragment_users(); //联系人fragment实例
-    protected fragment_chat fragmentChat   = new fragment_chat();  //聊天室fragment实例
-    protected fragment_my fragmentMy       = new fragment_my();    //个人页fragment实例
+    protected fragment_users fragmentUsers  = new fragment_users(); //联系人fragment实例
+    protected fragment_chat  fragmentChat   = new fragment_chat();  //聊天室fragment实例
+    protected fragment_my    fragmentMy     = new fragment_my();    //个人页fragment实例
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main_activity);
+
         initView();
         initFragmentView();
     }
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .beginTransaction()
                 .add(R.id.rl_main,fragmentUsers)
                 .add(R.id.rl_main,fragmentChat)
+                .add(R.id.rl_main,fragmentMy)
                 .hide(fragmentChat)
                 .hide(fragmentMy)
                 .show(fragmentUsers)
