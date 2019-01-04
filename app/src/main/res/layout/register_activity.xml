@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--头部内容-->
+    <RelativeLayout
+        android:id="@+id/register_header"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#008cc9">
+
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:src="@mipmap/register_close"/>
+
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:text="注册"/>
+    </RelativeLayout>
+
+    <!--输入框-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <EditText
+            android:id="@+id/register_et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="昵称:"/>
+        />
+        <EditText
+            android:layout_below="@+id/register_et_name"
+            android:id="@+id/register_et_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="账号:"
+            />
+        />
+        <EditText
+            android:layout_below="@id/register_et_user"
+            android:id="@+id/register_et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="密码:"/>
+        />
+
+    </RelativeLayout>
+
+    <!--密码功能-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="立即注册"
+            android:textColor="@color/color_exl_father"
+            android:background="#008cc9"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
