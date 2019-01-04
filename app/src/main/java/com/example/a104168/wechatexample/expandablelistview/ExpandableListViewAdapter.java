@@ -5,12 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a104168.wechatexample.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
@@ -72,14 +70,12 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
             convertView      = layoutInflater.inflate(R.layout.users_father,parent,false);
             fatherViewHolder = new FatherViewHolder();
             fatherViewHolder.textView   = convertView.findViewById(R.id.tv_father);
-            fatherViewHolder.imageView  = convertView.findViewById(R.id.img_select);
             convertView.setTag(fatherViewHolder);
         }else{
             fatherViewHolder = (FatherViewHolder) convertView.getTag();
         }
         ChildrenGroup childrenGroup = childrenGroups.get(groupPosition);
         fatherViewHolder.textView.setText(childrenGroup.getName());
-        fatherViewHolder.imageView.setSelected(isExpanded);
         return convertView;
     }
 
@@ -105,7 +101,6 @@ public class ExpandableListViewAdapter extends BaseExpandableListAdapter {
     }
     class FatherViewHolder{
         TextView textView;
-        ImageView imageView;
     }
     class ChildViewHolder{
         TextView textView;

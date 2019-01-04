@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        android:id="@+id/chat_title"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="聊天室"
@@ -11,7 +12,45 @@
         android:gravity="center"
         android:background="@color/color_title"/>
     <ListView
+        android:id="@+id/chat_listview"
+        android:layout_below="@+id/chat_title"
+        android:layout_above="@+id/chat_li_send"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="sadasd"/>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"/>
+    <View
+        android:layout_above="@+id/chat_li_send"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/text_gray"></View>
+
+   <LinearLayout
+       android:id="@+id/chat_li_send"
+       android:layout_width="match_parent"
+       android:layout_alignParentBottom="true"
+       android:layout_height="45dp"
+       android:orientation="horizontal">
+
+       <EditText
+           style="@style/myEditText"
+           android:layout_width="0dp"
+           android:layout_weight="4"
+           android:layout_height="match_parent"
+           android:hint="请输入要发送的信息"
+           android:paddingLeft="5dp"
+           android:background="#fff"
+           android:textCursorDrawable="@null"
+           />
+       <Button
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="match_parent"
+           android:text="发送"/>
+   </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/text_gray"></View>
+</RelativeLayout>
