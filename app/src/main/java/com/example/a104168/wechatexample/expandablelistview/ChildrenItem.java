@@ -31,11 +31,8 @@ public class ChildrenItem {
     }
     @Override
     public String toString() {
-        return "ChildrenItem{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", pid=" + pid +
-                '}';
+        return "ID =" + id +
+                ", name = '" + name + '\'';
     }
 }
 

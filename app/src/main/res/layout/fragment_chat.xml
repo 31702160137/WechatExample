@@ -15,7 +15,7 @@
         android:id="@+id/chat_listview"
         android:layout_below="@+id/chat_title"
         android:layout_above="@+id/chat_li_send"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:stackFromBottom="true"
         android:transcriptMode="alwaysScroll"/>
@@ -33,6 +33,7 @@
        android:orientation="horizontal">
 
        <EditText
+           android:id="@+id/chat_et_chat"
            style="@style/myEditText"
            android:layout_width="0dp"
            android:layout_weight="4"
@@ -43,6 +44,7 @@
            android:textCursorDrawable="@null"
            />
        <Button
+           android:id="@+id/chat_btn_send"
            android:layout_width="0dp"
            android:layout_weight="1"
            android:layout_height="match_parent"

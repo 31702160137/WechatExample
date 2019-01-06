@@ -11,6 +11,7 @@ import com.example.a104168.wechatexample.fragmentlayout.fragment_users;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_menu_users,tv_menu_chat,tv_menu_my;        //底部导航监听控件
+    private  String name,user;
 
     protected fragment_users fragmentUsers  = new fragment_users(); //联系人fragment实例
     protected fragment_chat  fragmentChat   = new fragment_chat();  //聊天室fragment实例
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.main_activity);
         initView();
         initFragmentView();
+        getData();
     }
     //初始化fragment容器
     private void initFragmentView(){
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_menu_my      .setSelected(false);
     }
     @Override
+    //监听底部导航切换
     public void onClick(View v) {
         selected();
         switch (v.getId()){
@@ -83,4 +86,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
+    //获取登陆页传递过来的数据
+    private void getData(){
+        if(getIntent() != null){
+            user = getIntent().getStringExtra("user");
+            name = getIntent().getStringExtra("name");
+        }
+    }
+    //用于fragment获取数据
+    public String getName() {
+        return name;
+    }
+    public String getUser() {
+        return user;
+    }
+
 }

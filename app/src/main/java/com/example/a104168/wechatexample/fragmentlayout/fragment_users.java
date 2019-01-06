@@ -29,7 +29,6 @@ public class fragment_users extends Fragment{
     private List<ChildrenGroup>         childrenGroups; //一级列表集合
     private ExpandableListView          expandableListView;//可扩容列表视图
     private ExpandableListViewAdapter   expandableListViewAdapter; //自定义视图适配器
-    private Context    mcontext   = getActivity();       //获取activity上下文
     private OkHttpUtil okHttpUtil = new OkHttpUtil();
     @Nullable
     @Override
@@ -52,10 +51,11 @@ public class fragment_users extends Fragment{
             @Override
             //用户列表项点击事件监听
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                Toast.makeText(mcontext, expandableListViewAdapter.getChild(groupPosition,childPosition).toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(),expandableListViewAdapter.getChild(groupPosition,childPosition).toString(),Toast.LENGTH_SHORT).show();
                 return true;
             }
         });
+
         return view;
     }
 }
