@@ -23,7 +23,9 @@
                 android:id="@+id/chat_img"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="5dp"
                 android:background="@drawable/ic_menu_users"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,20 +36,24 @@
                     android:id="@+id/chat_tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name:"/>
+                    android:text="name:"
+                    android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/chat_tv_chat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="5dp"
                     android:maxWidth="200dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textColor="#000"
-                    android:text="sassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
-                    android:background="#72e159"
+                    android:text="sasdasdasddasd"
+                    android:background="@drawable/mylistview"
                     android:singleLine="false"/>
 
             </LinearLayout>

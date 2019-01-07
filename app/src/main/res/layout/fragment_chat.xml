@@ -18,7 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"/>
+        android:transcriptMode="alwaysScroll"
+        android:divider="@null"/>
     <View
         android:layout_above="@+id/chat_li_send"
         android:layout_width="match_parent"

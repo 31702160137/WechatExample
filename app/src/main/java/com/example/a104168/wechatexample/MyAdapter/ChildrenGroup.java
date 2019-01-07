@@ -1,15 +1,15 @@
-package com.example.a104168.wechatexample.expandablelistview;
+package com.example.a104168.wechatexample.MyAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ChildrenGroup {
-    private Integer id;
+    private String id;
     private String name;
 
     //二级列表集合
     public List<ChildrenItem> ChildrenItems = new ArrayList<>();
-    public ChildrenGroup(Integer id, String name) {
+    public ChildrenGroup(String id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -19,17 +19,17 @@ public class ChildrenGroup {
         ChildrenItems.add(ChildrenItem);
     }
     // 指定数据值
-    public void addChild(Integer id, String name) {
+    public void addChild(String id, String name) {
         ChildrenItem childrenItem = new ChildrenItem(id, name);
         childrenItem.setPid(getId());
         ChildrenItems.add(childrenItem);
     }
     public ChildrenGroup() {
     }
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getName() {

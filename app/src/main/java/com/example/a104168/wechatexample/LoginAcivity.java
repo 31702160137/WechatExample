@@ -28,7 +28,7 @@ import okhttp3.Response;
 public class LoginAcivity extends AppCompatActivity implements View.OnClickListener {
     //实现用户登陆
     private EditText et_user,et_password;
-    private Button btn_login;
+    private Button btn_login,btn_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,8 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
         et_user     = findViewById(R.id.et_user);
         et_password = findViewById(R.id.et_password);
         btn_login   = findViewById(R.id.login);
+        btn_register= findViewById(R.id.btn_register);
+        btn_register.setOnClickListener(this);
         btn_login.setOnClickListener(this);
     }
     @Override
@@ -70,6 +72,11 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
                         ShowUI(loginBenas);
                     }
                 });
+                break;
+            case R.id.btn_register:
+                startActivity(new Intent(this,RegisterActivity.class));
+                finish();
+                break;
         }
     }
 //    登陆提示并跳转
@@ -81,11 +88,13 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
                         .setTitle("提示")
                         .setMessage(loginBenas.getStatus());
                 builder.show();
+
                 if("登陆成功".equals(loginBenas.getStatus())) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("user", loginBenas.getUser());
                     intent.putExtra("name", loginBenas.getName());
                     startActivity(intent);
+                    LoginAcivity.this.finish();
                 }
             }
         });

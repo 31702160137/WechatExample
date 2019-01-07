@@ -1,17 +1,13 @@
 package com.example.a104168.wechatexample.OkHttp;
 
-import com.example.a104168.wechatexample.expandablelistview.ChildrenGroup;
+import com.example.a104168.wechatexample.MyAdapter.ChildrenGroup;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
@@ -20,17 +16,18 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class OkHttpUtil extends OkHttpClient {
-    //请求联系人列表php文件地址
-    private static String Users_url = "http://123.207.85.214/chat/member.php";
-    private static String Login_url = "http://123.207.85.214/chat/login.php";
-    private static String Chat_url  = "http://123.207.85.214/chat/chat1.php";
+    //请求地址
+    private static String Users_url     = "http://123.207.85.214/chat/member.php";
+    private static String Login_url     = "http://123.207.85.214/chat/login.php";
+    private static String Chat_url      = "http://123.207.85.214/chat/chat1.php";
+    private static String Register_url  = "http://123.207.85.214/chat/register.php";
     private OkHttpClient client;
     private ChildrenGroup group;
     /** 获取联系人列表
      * @param id    一级列表的id
      * @param name 一级列表的标题
      **/
-    public ChildrenGroup httpGetUsers(Integer id,String name){
+    public ChildrenGroup httpGetUsers(String id,String name){
         client  = new OkHttpUtil();
         group   = new ChildrenGroup(id,name);
         final Request request = new Request.Builder()
@@ -48,7 +45,7 @@ public class OkHttpUtil extends OkHttpClient {
                       JSONArray jsonArray = new JSONArray(json);
                       for (int i = 0; i < jsonArray.length(); i++) {
                           JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                          group.addChild(i,jsonObject.getString("name"));
+                          group.addChild(""+i,jsonObject.getString("name"));
                       }
                   }
                 } catch (IOException e) {
@@ -99,5 +96,20 @@ public class OkHttpUtil extends OkHttpClient {
                 .post(body)
                 .build();
         client.newCall(request).enqueue(callback);
+    }
+    public  static String httpPostRegister(String name,String user,String password) throws IOException{
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = new FormBody.Builder()
+                .add("name",name)
+                .add("user",user)
+                .add("password",password)
+                .build();
+        Request request = new Request.Builder()
+                .url(Register_url)
+                .post(body)
+                .build();
+
+        Response response =  client.newCall(request).execute();
+        return  response.body().string();
     }
 }

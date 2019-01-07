@@ -28,4 +28,10 @@ public class ChatBenas {
     public void setChat(String chat) {
         this.chat = chat;
     }
+    public String toString() {
+        return "ChatBenas{" +
+                "name=" + name +
+                ", time=" + time +
+                ", chat=" + chat + '}';
+    }
 }

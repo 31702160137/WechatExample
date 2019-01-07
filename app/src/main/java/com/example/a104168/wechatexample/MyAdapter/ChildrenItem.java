@@ -1,20 +1,20 @@
-package com.example.a104168.wechatexample.expandablelistview;
+package com.example.a104168.wechatexample.MyAdapter;
 
 public class ChildrenItem {
-    private Integer id;
+    private String id;
     private String name;
-    private Integer pid;
+    private String pid;
 
     public ChildrenItem() {
     }
-    public ChildrenItem(Integer id, String name) {
+    public ChildrenItem(String id, String name) {
         this.id = id;
         this.name = name;
     }
-    public Integer getId() {
+    public String getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getName() {
@@ -23,15 +23,15 @@ public class ChildrenItem {
     public void setName(String name) {
         this.name = name;
     }
-    public Integer getPid() {
+    public String getPid() {
         return pid;
     }
-    public void setPid(Integer pid) {
+    public void setPid(String pid) {
         this.pid = pid;
     }
     @Override
     public String toString() {
-        return "ID =" + id +
+        return "num=" + id +
                 ", name = '" + name + '\'';
     }
 }

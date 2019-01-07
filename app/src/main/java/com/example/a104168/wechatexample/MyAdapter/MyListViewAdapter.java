@@ -1,4 +1,4 @@
-package com.example.a104168.wechatexample.chat;
+package com.example.a104168.wechatexample.MyAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

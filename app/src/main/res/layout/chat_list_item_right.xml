@@ -31,20 +31,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
-                    android:text="name:"/>
+                    android:text="name:"
+                    android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/chat_tv_chat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
                     android:maxWidth="200dp"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textColor="#000"
-                    android:text="sassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
-                    android:background="#72e159"
+                    android:background="@drawable/mylistview"
                     android:singleLine="false"/>
 
             </LinearLayout>
