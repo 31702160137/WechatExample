@@ -1,24 +1,24 @@
 package com.example.a104168.wechatexample.fragmentlayout;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.a104168.wechatexample.Beans.ChatBenas;
 import com.example.a104168.wechatexample.Dao.ChatDaoImp;
-import com.example.a104168.wechatexample.Dao.MyHelper;
 import com.example.a104168.wechatexample.MainActivity;
+import com.example.a104168.wechatexample.MyAdapter.MyListViewAdapter;
 import com.example.a104168.wechatexample.OkHttp.OkHttpUtil;
 import com.example.a104168.wechatexample.R;
-import com.example.a104168.wechatexample.Beans.ChatBenas;
-import com.example.a104168.wechatexample.MyAdapter.MyListViewAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,7 +66,11 @@ public class fragment_chat extends Fragment {
             public void onClick(View v) {
                 switch (v.getId()){
                     case R.id.chat_btn_send:
-                         String chat =  et_chat.getText().toString();
+                         String chat =  et_chat.getText().toString().trim();
+                        if(chat.isEmpty()){
+                            Toast.makeText(getActivity(), "不能发送空信息", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                          String active_user = ((MainActivity)getActivity()).getUser();
                                 OkHttpUtil.httpPostChat(active_user, chat, new Callback() {
                                     @Override
