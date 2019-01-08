@@ -1,4 +1,4 @@
-package com.example.a104168.wechatexample.fragmentlayout;
+package com.example.a104168.wechatexample.Fragmentlayout;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -19,7 +19,7 @@ import com.example.a104168.wechatexample.MyAdapter.ExpandableListViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragment_users extends Fragment{
+public class Fragment_users extends Fragment{
     /*
     * 用于管理联系人页面
     * */

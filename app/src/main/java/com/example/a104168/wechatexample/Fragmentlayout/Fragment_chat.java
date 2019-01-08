@@ -1,5 +1,6 @@
-package com.example.a104168.wechatexample.fragmentlayout;
+package com.example.a104168.wechatexample.Fragmentlayout;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -32,7 +33,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class fragment_chat extends Fragment {
+public class Fragment_chat extends Fragment {
     private EditText            et_chat;
     private Button              btn_send;
     private ChatBenas           chatBenas;
@@ -40,7 +41,6 @@ public class fragment_chat extends Fragment {
     private ListView            chat_list;
     private Handler             handler;
     private ChatDaoImp    chatDaoImp;
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat,container,false);
@@ -118,13 +118,18 @@ public class fragment_chat extends Fragment {
             }
         }).start();
     }
-    private void initListView(String active_name){
-        List<ChatBenas> chatBenas = chatDaoImp.queryChats();
-        if(chatBenas == null){
-
-        }else{
-            MyListViewAdapter myListViewAdapter = new MyListViewAdapter(chatBenas,getActivity(),active_name);
-            chat_list.setAdapter(myListViewAdapter);
-        }
+    private void initListView(final String active_name){
+        final List<ChatBenas> chatBenas = chatDaoImp.queryChats();
+       new Thread(new Runnable() {
+           @Override
+           public void run() {
+               if(chatBenas == null){
+                   return;
+               }else{
+                   MyListViewAdapter myListViewAdapter = new MyListViewAdapter(chatBenas,getActivity(),active_name);
+                   chat_list.setAdapter(myListViewAdapter);
+               }
+           }
+       }).start();
     }
 }

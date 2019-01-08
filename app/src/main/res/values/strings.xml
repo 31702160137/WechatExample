@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WechatExample</string>
+    <string name="btn_login">登陆</string>
 </resources>

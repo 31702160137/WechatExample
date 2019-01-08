@@ -6,15 +6,12 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PhoneUtil {
 
     // 号码
-    public final static String NUM = ContactsContract.CommonDataKinds.Phone.NUMBER;
+    private final static String NUM = ContactsContract.CommonDataKinds.Phone.NUMBER;
     // 联系人姓名
-    public final static String NAME = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME;
+    private final static String NAME = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME;
 
     //上下文对象
     private Context context;
@@ -25,8 +22,10 @@ public class PhoneUtil {
         this.context = context;
     }
 
+
     //获取所有联系人
     public ChildrenGroup getPhone(String id,String name){
+
         ChildrenGroup childrenGroup = new ChildrenGroup(id,name);
         ContentResolver cr = context.getContentResolver();
         Cursor cursor = cr.query(phoneUri,new String[]{NUM,NAME},null,null,null);
@@ -34,6 +33,7 @@ public class PhoneUtil {
             ChildrenItem childrenItem= new ChildrenItem(cursor.getString(cursor.getColumnIndex(NUM)),cursor.getString(cursor.getColumnIndex(NAME)));
             childrenGroup.addChild(childrenItem);
         }
+        cursor.close();
         return childrenGroup;
     }
 }

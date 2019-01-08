@@ -5,17 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.a104168.wechatexample.fragmentlayout.fragment_chat;
-import com.example.a104168.wechatexample.fragmentlayout.fragment_my;
-import com.example.a104168.wechatexample.fragmentlayout.fragment_users;
+import com.example.a104168.wechatexample.Fragmentlayout.Fragment_chat;
+import com.example.a104168.wechatexample.Fragmentlayout.Fragment_my;
+import com.example.a104168.wechatexample.Fragmentlayout.Fragment_users;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    
     private TextView tv_menu_users,tv_menu_chat,tv_menu_my;        //底部导航监听控件
-    private  String name,user;
+    private  String name,user,num;
 
-    protected fragment_users fragmentUsers  = new fragment_users(); //联系人fragment实例
-    protected fragment_chat  fragmentChat   = new fragment_chat();  //聊天室fragment实例
-    protected fragment_my    fragmentMy     = new fragment_my();    //个人页fragment实例
+    protected Fragment_users fragmentUsers  = new Fragment_users(); //联系人fragment实例
+    protected Fragment_chat fragmentChat    = new Fragment_chat();  //聊天室fragment实例
+    protected Fragment_my fragmentMy        = new Fragment_my();    //个人页fragment实例
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(getIntent() != null){
             user = getIntent().getStringExtra("user");
             name = getIntent().getStringExtra("name");
+            num  = getIntent().getStringExtra("num");
         }
     }
     //用于fragment获取数据
@@ -100,5 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public String getUser() {
         return user;
     }
+    public String getNum(){return num;}
 
 }

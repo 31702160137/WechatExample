@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.a104168.wechatexample.Beans.ChatBenas;
@@ -46,12 +47,16 @@ public class MyListViewAdapter extends BaseAdapter {
                         messagesHolder.time = convertView.findViewById(R.id.chat_tv_time);
                         messagesHolder.chat = convertView.findViewById(R.id.chat_tv_chat);
                         messagesHolder.name = convertView.findViewById(R.id.chat_tv_name);
+                        messagesHolder.head = convertView.findViewById(R.id.chat_img);
+                        messagesHolder.head.setImageResource(R.drawable.tx2);
                 }else{
                         convertView = layoutInflater.inflate(R.layout.chat_list_item_left, null);
                         messagesHolder = new MessagesHolder();
                         messagesHolder.time = convertView.findViewById(R.id.chat_tv_time);
                         messagesHolder.chat = convertView.findViewById(R.id.chat_tv_chat);
                         messagesHolder.name = convertView.findViewById(R.id.chat_tv_name);
+                        messagesHolder.head = convertView.findViewById(R.id.chat_img);
+                         messagesHolder.head.setImageResource(R.drawable.icon_head);
                 }
                 messagesHolder.name.setText(messages.get(position).getName());
                 messagesHolder.chat.setText(messages.get(position).getChat());
@@ -63,5 +68,6 @@ public class MyListViewAdapter extends BaseAdapter {
         TextView time;
         TextView name;
         TextView chat;
+        ImageView head;
     }
 }

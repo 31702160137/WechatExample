@@ -74,9 +74,9 @@
             android:id="@+id/login"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:text="登录"
+            android:text="@string/btn_login"
             android:textColor="@color/color_exl_father"
-            android:background="#008cc9"/>
+            android:background="@drawable/my_btn_login"/>
 </LinearLayout>
 
     <RelativeLayout

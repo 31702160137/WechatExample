@@ -11,7 +11,6 @@
             android:id="@+id/chat_tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2018-12-5"
             android:textAlignment="center"
             />
         <LinearLayout
@@ -25,8 +24,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/icon_head"/>
+                android:layout_marginBottom="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,15 +34,12 @@
                     android:id="@+id/chat_tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="name:"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/chat_tv_chat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
                     android:layout_marginTop="5dp"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginBottom="5dp"
                     android:maxWidth="200dp"
                     android:paddingTop="5dp"
@@ -52,7 +47,6 @@
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:textColor="#000"
-                    android:text="sasdasdasddasd"
                     android:background="@drawable/mylistview"
                     android:singleLine="false"/>
 

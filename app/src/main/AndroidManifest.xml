@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.a104168.wechatexample">
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,12 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:windowSoftInputMode="adjustPan">
 
         </activity>
-        <activity android:name=".fragmentlayout.fragment_chat" />
-        <activity android:name=".fragmentlayout.fragment_users" />
-        <activity android:name=".fragmentlayout.fragment_my" />
+        <activity android:name=".Fragmentlayout.Fragment_chat" />
+        <activity android:name=".Fragmentlayout.Fragment_users" />
+        <activity android:name=".Fragmentlayout.Fragment_my" />
         <activity android:name=".LoginAcivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
