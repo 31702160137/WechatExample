@@ -196,6 +196,7 @@
 
             >
             <TextView
+                android:id="@+id/my_tv_exit"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:layout_width="0dp"

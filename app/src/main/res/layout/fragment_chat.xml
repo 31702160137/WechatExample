@@ -4,13 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        style="@style/my_nav_title"
         android:id="@+id/chat_title"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="聊天室"
-        android:textSize="14dp"
-        android:gravity="center"
-        android:background="@color/color_title"/>
+        android:text="聊天室"/>
     <ListView
         android:id="@+id/chat_listview"
         android:layout_below="@+id/chat_title"
@@ -46,6 +42,7 @@
            />
        <Button
            android:id="@+id/chat_btn_send"
+           android:background="@drawable/my_btn_send"
            android:layout_width="0dp"
            android:layout_weight="1"
            android:layout_height="match_parent"

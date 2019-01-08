@@ -4,12 +4,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
+        style="@style/my_nav_title"
         android:text="联系人"
-        android:textSize="14dp"
-        android:gravity="center"
-        android:background="@color/color_title"/>
+       />
     <ExpandableListView
         android:id="@+id/exlist_user"
         android:layout_width="match_parent"

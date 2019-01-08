@@ -1,12 +1,11 @@
 package com.example.a104168.wechatexample;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -110,6 +109,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                     .setPositiveButton("确定",null)
                     .show();
             if("注册成功".equals(status)){
+                Toast.makeText(this, "注册成功！", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,LoginAcivity.class));
                 finish();
             }

@@ -33,14 +33,19 @@
 
         <EditText
             android:id="@+id/et_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="请输入您的账号"/>
+            android:layout_marginLeft="8dp"
+            android:paddingLeft="5dp"
+            android:background="@drawable/my_login_editext"
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:hint="请输入您的账号"
+            android:maxLines="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
 
         <TextView
             android:id="@+id/tv_password"
@@ -51,10 +56,14 @@
 
         <EditText
             android:id="@+id/et_password"
+            android:paddingLeft="5dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/my_login_editext"
             android:password="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="请输入您的密码"/>
+            android:layout_width="200dp"
+            android:layout_height="35dp"
+            android:hint="请输入您的密码"
+            android:maxLines="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_gravity="center_horizontal"

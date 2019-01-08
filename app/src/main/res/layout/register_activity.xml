@@ -31,34 +31,89 @@
 
     <!--输入框-->
     <RelativeLayout
+        android:id="@+id/register_rl_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         >
-
+        <View
+            android:id="@+id/register_v_name"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/icon_x"
+            android:layout_marginTop="8dp"></View>
+        <TextView
+            android:id="@+id/register_tv_name"
+            android:layout_alignBaseline="@id/register_et_name"
+            android:layout_toRightOf="@+id/register_v_name"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称:"
+            android:textSize="20sp"
+            android:textColor="#302b2b"
+            android:layout_marginRight="5dp"
+            />
         <EditText
             android:id="@+id/register_et_name"
+            android:layout_toRightOf="@+id/register_tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="昵称:"/>
-        />
+            android:hint="请输入昵称"/>
+        <View
+            android:id="@+id/register_v_user"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/icon_x"
+            android:layout_marginTop="68dp"></View>
+        <TextView
+            android:id="@+id/register_tv_user"
+            android:layout_alignBaseline="@id/register_et_user"
+            android:layout_toRightOf="@+id/register_v_user"
+            android:layout_alignParentTop="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号:"
+            android:textSize="20sp"
+            android:textColor="#302b2b"
+            android:layout_marginRight="5dp"
+            />
         <EditText
             android:layout_below="@+id/register_et_name"
+            android:layout_toRightOf="@+id/register_tv_user"
             android:id="@+id/register_et_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="账号:"
+            android:hint="请输入账号"
             />
-        />
+        <View
+            android:id="@+id/register_v_password"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/icon_x"
+            android:layout_marginTop="130dp"></View>
+        <TextView
+            android:id="@+id/register_tv_password"
+            android:layout_alignBaseline="@id/register_et_password"
+            android:layout_toRightOf="@+id/register_v_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码:"
+            android:textSize="20sp"
+            android:textColor="#302b2b"
+            android:layout_marginRight="5dp"
+            />
         <EditText
             android:layout_below="@id/register_et_user"
+            android:layout_toRightOf="@+id/register_tv_password"
             android:id="@+id/register_et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="密码:"/>
-        />
+            android:hint="请输入密码"
+            android:password="true"/>
+
 
     </RelativeLayout>
 

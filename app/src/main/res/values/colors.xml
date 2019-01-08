@@ -6,7 +6,8 @@
     <color name="transparent">#00ffffff</color>
     <color name="text_gray">#c7c7c7</color>
     <color name="text_black">#131313</color>
-    <color name="color_title">#5bf16d</color>
+    <color name="color_title">#393939</color>
+    <color name="color_title_text">#e8e2e2</color>
     <color name="text_red">#e35a5a</color>
     <color name="color_exl_father">#dfe6ec</color>
     <color name="text_bule">#2389bf</color>

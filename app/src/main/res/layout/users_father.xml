@@ -5,7 +5,7 @@
     >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:id="@+id/rl"
         android:background="@color/color_exl_father"
         >

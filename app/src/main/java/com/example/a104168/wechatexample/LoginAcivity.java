@@ -1,10 +1,9 @@
 package com.example.a104168.wechatexample;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,12 +13,7 @@ import com.example.a104168.wechatexample.Beans.LoginBenas;
 import com.example.a104168.wechatexample.OkHttp.OkHttpUtil;
 import com.google.gson.Gson;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -84,17 +78,20 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(LoginAcivity.this)
-                        .setTitle("提示")
-                        .setMessage(loginBenas.getStatus());
-                builder.show();
-
                 if("登陆成功".equals(loginBenas.getStatus())) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("user", loginBenas.getUser());
                     intent.putExtra("name", loginBenas.getName());
                     startActivity(intent);
                     LoginAcivity.this.finish();
+                }else {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginAcivity.this)
+                            .setTitle("提示")
+                            .setMessage("账号或密码错误！")
+                            .setPositiveButton("确定",null);
+                    builder.show();
+
                 }
             }
         });
