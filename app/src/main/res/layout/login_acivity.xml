@@ -7,16 +7,17 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:paddingTop="109dp"
+
     android:background="@drawable/ok"
     >
 
     <!--第5行水平居中-->
     <ImageView
         android:id="@+id/icon_IronMan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/ironman" />
+        android:background="@drawable/logo1" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="wrap_content"
@@ -75,7 +76,7 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:text="@string/btn_login"
-            android:textColor="@color/color_exl_father"
+            android:textColor="@color/text_login"
             android:background="@drawable/my_btn_login"/>
 </LinearLayout>
 

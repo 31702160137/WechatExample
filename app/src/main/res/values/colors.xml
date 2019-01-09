@@ -9,7 +9,8 @@
     <color name="color_title">#393939</color>
     <color name="color_title_text">#e8e2e2</color>
     <color name="text_red">#e35a5a</color>
-    <color name="color_exl_father">#dfe6ec</color>
+    <color name="color_exl_father">#4b57c5bf</color>
     <color name="text_bule">#2389bf</color>
     <color name="text_exit">#f21616</color>
+    <color name="text_login">#ddd</color>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.a104168.wechatexample.Fragmentlayout;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -40,7 +39,7 @@ public class Fragment_chat extends Fragment {
     private List<ChatBenas>     chats       = new ArrayList<>();
     private ListView            chat_list;
     private Handler             handler;
-    private ChatDaoImp    chatDaoImp;
+    private ChatDaoImp          chatDaoImp;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_chat,container,false);
