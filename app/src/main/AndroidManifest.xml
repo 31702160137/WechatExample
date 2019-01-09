@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity android:name=".Fragmentlayout.Fragment_chat" />
         <activity android:name=".Fragmentlayout.Fragment_users" />
         <activity android:name=".Fragmentlayout.Fragment_my" />

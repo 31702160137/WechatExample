@@ -1,5 +1,6 @@
 package com.example.a104168.wechatexample.Fragmentlayout;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,14 +42,19 @@ public class Fragment_chat extends Fragment {
     private ListView            chat_list;
     private Handler             handler;
     private ChatDaoImp          chatDaoImp;
+    private LinearLayout        ly_bottom;
+    private String active_name;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_chat,container,false);
+        final View view = inflater.inflate(R.layout.fragment_chat,container,false);
         chatDaoImp  = new ChatDaoImp(getActivity());
         et_chat = view.findViewById(R.id.chat_et_chat);
         btn_send = view.findViewById(R.id.chat_btn_send);
         chat_list = view.findViewById(R.id.chat_listview);
-        initListView(((MainActivity)getActivity()).getName());//初始化聊天室界面
+        active_name =((MainActivity)getActivity()).getName();
+        ly_bottom = getActivity().findViewById(R.id.ly_bottom);
+        initListView(active_name);//初始化聊天室界面
+        listenerKeyBoard();
 //        更新listview
         handler = new Handler(){
             String active_name =  ((MainActivity)getActivity()).getName();
@@ -56,9 +63,12 @@ public class Fragment_chat extends Fragment {
                 if(msg.what == 1){
                     MyListViewAdapter myListViewAdapter = new MyListViewAdapter(chats,getActivity(),active_name);
                     chat_list.setAdapter(myListViewAdapter);
+                }if(msg.what ==2){
+                    ly_bottom.setVisibility(View.GONE);
                 }
             }
         };
+
         //监听发送按钮
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,4 +141,38 @@ public class Fragment_chat extends Fragment {
            }
        }).start();
     }
+    private void listenerKeyBoard() {
+        getActivity().getWindow().getDecorView().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right,
+                                       int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                setViewHeight();
+            }
+        });
+    }
+
+    private boolean isSoftShowing() {
+        //获取当前屏幕内容的高度
+        int screenHeight = getActivity().getWindow().getDecorView().getHeight();
+        //获取View可见区域的bottom
+        Rect rect = new Rect();
+        getActivity().getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
+        return screenHeight - rect.bottom != 0;
+    }
+
+    private void setViewHeight() {
+        //软键盘弹出
+        if (isSoftShowing()){
+            Message msg = new Message();
+            msg.what =2;
+            handler.sendMessage(msg);
+        }
+        else {
+            //软键盘收起
+            if(ly_bottom.getVisibility() != View.VISIBLE){
+                ly_bottom.setVisibility(View.VISIBLE);
+            }
+        }
+    }
+
 }

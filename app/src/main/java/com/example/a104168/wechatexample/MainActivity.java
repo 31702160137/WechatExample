@@ -1,16 +1,19 @@
 package com.example.a104168.wechatexample;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.a104168.wechatexample.Fragmentlayout.Fragment_chat;
 import com.example.a104168.wechatexample.Fragmentlayout.Fragment_find;
 import com.example.a104168.wechatexample.Fragmentlayout.Fragment_my;
 import com.example.a104168.wechatexample.Fragmentlayout.Fragment_users;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     
     private TextView tv_menu_users,tv_menu_chat,tv_menu_my,tv_menu_find;        //底部导航监听控件
     private  String name,user,num;
@@ -123,5 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return user;
     }
     public String getNum(){return num;}
+
 
 }
