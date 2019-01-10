@@ -1,6 +1,6 @@
 package com.example.a104168.wechatexample.Beans;
 
-public class ChatBenas {
+public class ChatBeans {
     private String name;
     private String time;
     private String chat;
@@ -29,7 +29,7 @@ public class ChatBenas {
         this.chat = chat;
     }
     public String toString() {
-        return "ChatBenas{" +
+        return "ChatBeans{" +
                 "name=" + name +
                 ", time=" + time +
                 ", chat=" + chat + '}';

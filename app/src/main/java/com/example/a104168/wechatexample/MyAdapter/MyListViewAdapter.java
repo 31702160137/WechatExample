@@ -8,16 +8,16 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.a104168.wechatexample.Beans.ChatBenas;
+import com.example.a104168.wechatexample.Beans.ChatBeans;
 import com.example.a104168.wechatexample.R;
 
 import java.util.List;
 
 public class MyListViewAdapter extends BaseAdapter {
-    private List<ChatBenas>  messages; //聊天信息集合
+    private List<ChatBeans>  messages; //聊天信息集合
     private String          name;     //当前用户的name值
     private LayoutInflater layoutInflater;
-    public MyListViewAdapter(List<ChatBenas> messages, Context context, String name){
+    public MyListViewAdapter(List<ChatBeans> messages, Context context, String name){
         this.messages = messages;
         this.name     = name;
         this.layoutInflater = LayoutInflater.from(context);

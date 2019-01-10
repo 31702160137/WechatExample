@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.a104168.wechatexample.Beans.ChatBenas;
+import com.example.a104168.wechatexample.Beans.ChatBeans;
 import com.example.a104168.wechatexample.Dao.ChatDaoImp;
 import com.example.a104168.wechatexample.MainActivity;
 import com.example.a104168.wechatexample.MyAdapter.MyListViewAdapter;
@@ -37,8 +37,8 @@ import okhttp3.Response;
 public class Fragment_chat extends Fragment {
     private EditText            et_chat;
     private Button              btn_send;
-    private ChatBenas           chatBenas;
-    private List<ChatBenas>     chats       = new ArrayList<>();
+    private ChatBeans mChatBeans;
+    private List<ChatBeans>     chats       = new ArrayList<>();
     private ListView            chat_list;
     private Handler             handler;
     private ChatDaoImp          chatDaoImp;
@@ -109,11 +109,11 @@ public class Fragment_chat extends Fragment {
                     JSONArray jsonArray = new JSONArray(json);
                     for (int i = jsonArray.length()-1; i >=0; i--) {
                         JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                        chatBenas = new ChatBenas();
-                        chatBenas.setChat(jsonObject.getString("chat"));
-                        chatBenas.setName(jsonObject.getString("name"));
-                        chatBenas.setTime(jsonObject.getString("time"));
-                        chats.add(chatBenas);
+                        mChatBeans = new ChatBeans();
+                        mChatBeans.setChat(jsonObject.getString("chat"));
+                        mChatBeans.setName(jsonObject.getString("name"));
+                        mChatBeans.setTime(jsonObject.getString("time"));
+                        chats.add(mChatBeans);
                     }
 //                    聊天信息保存到数据库
                     chatDaoImp.deleteAll();
@@ -128,7 +128,7 @@ public class Fragment_chat extends Fragment {
         }).start();
     }
     private void initListView(final String active_name){
-        final List<ChatBenas> chatBenas = chatDaoImp.queryChats();
+        final List<ChatBeans> chatBenas = chatDaoImp.queryChats();
        new Thread(new Runnable() {
            @Override
            public void run() {

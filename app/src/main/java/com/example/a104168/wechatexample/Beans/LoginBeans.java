@@ -1,6 +1,6 @@
 package com.example.a104168.wechatexample.Beans;
 
-public class LoginBenas {
+public class LoginBeans {
 
     private String status;
     private String user;

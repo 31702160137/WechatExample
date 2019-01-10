@@ -17,6 +17,7 @@
             android:layout_height="10dp"
             android:background="#eee"></View>
         <LinearLayout
+            android:id="@+id/my_pig_pyq"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="#fff">

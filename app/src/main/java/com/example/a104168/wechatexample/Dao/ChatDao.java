@@ -1,7 +1,5 @@
 package com.example.a104168.wechatexample.Dao;
 
-import com.example.a104168.wechatexample.Beans.ChatBenas;
-
 import java.util.List;
 
 public interface ChatDao<T> {

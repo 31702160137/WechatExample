@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.a104168.wechatexample.Beans.LoginBenas;
+import com.example.a104168.wechatexample.Beans.LoginBeans;
 import com.example.a104168.wechatexample.OkHttp.OkHttpUtil;
 import com.example.a104168.wechatexample.Utils.MangrtPrower;
 import com.google.gson.Gson;
@@ -66,8 +66,8 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
                     }
                     @Override
                     public void onResponse(Call call, Response response) throws IOException {
-                        LoginBenas loginBenas = new Gson().fromJson(response.body().string(),LoginBenas.class);
-                        ShowUI(loginBenas);
+                        LoginBeans loginBeans = new Gson().fromJson(response.body().string(),LoginBeans.class);
+                        ShowUI(loginBeans);
                     }
                 });
                 break;
@@ -81,14 +81,14 @@ public class LoginAcivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 //    登陆提示并跳转
-    public void ShowUI(final LoginBenas loginBenas){
+    public void ShowUI(final LoginBeans loginBeans){
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                if("登陆成功".equals(loginBenas.getStatus())) {
+                if("登陆成功".equals(loginBeans.getStatus())) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("user", loginBenas.getUser());
-                    intent.putExtra("name", loginBenas.getName());
+                    intent.putExtra("user", loginBeans.getUser());
+                    intent.putExtra("name", loginBeans.getName());
                     intent.putExtra("num",et_user.getText().toString().trim());
                     startActivity(intent);
                     LoginAcivity.this.finish();

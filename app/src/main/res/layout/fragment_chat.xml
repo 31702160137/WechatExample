@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/rl_bge"
-    android:background="@drawable/bge11"
   >
     <TextView
         style="@style/my_nav_title"
